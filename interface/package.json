@@ -118,8 +118,10 @@
     ]
   },
   "license": "GPL-3.0-or-later",
-   "dependencies": {
+  "dependencies": {
+    "@types/webfontloader": "^1.6.32",
+    "@uniswap/sdk": "./fork/uniswap-sdk",
     "moment-timezone": "^0.5.31",
-    "@uniswap/sdk": "./fork/uniswap-sdk"
-  }  
+    "webfontloader": "^1.6.28"
+  }
 }

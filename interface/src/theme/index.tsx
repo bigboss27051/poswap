@@ -9,6 +9,13 @@ import styled, {
 import { useIsDarkMode } from '../state/user/hooks'
 import { Text, TextProps } from 'rebass'
 import { Colors } from './styled'
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Kanit:400,500,900', 'sans-serif']
+  }
+});
 
 export * from './components'
 
@@ -41,37 +48,38 @@ export function colors(darkMode: boolean): Colors {
     black,
 
     // text
-    text1: darkMode ? '#FFFFFF' : '#000000',
-    text2: darkMode ? '#C3C5CB' : '#565A69',
+    text1: darkMode ? '#FFFFFF' : '#452A7A',
+    text2: darkMode ? '#C3C5CB' : '#7645D9',
     text3: darkMode ? '#6C7284' : '#888D9B',
     text4: darkMode ? '#565A69' : '#C3C5CB',
     text5: darkMode ? '#2C2F36' : '#EDEEF2',
 
     // backgrounds / greys
-    bg1: darkMode ? '#212429' : '#FFFFFF',
-    bg2: darkMode ? '#2C2F36' : '#F7F8FA',
+    bg1: darkMode ? '#212429' : '#FFFDFA',
+    bg2: darkMode ? '#2C2F36' : '#F5F3F3',
     bg3: darkMode ? '#40444F' : '#EDEEF2',
     bg4: darkMode ? '#565A69' : '#CED0D9',
-    bg5: darkMode ? '#6C7284' : '#888D9B',
+    bg5: darkMode ? '#6C7284' : '#43d3db',
 
     //specialty colors
     modalBG: darkMode ? 'rgba(0,0,0,.425)' : 'rgba(0,0,0,0.3)',
     advancedBG: darkMode ? 'rgba(0,0,0,0.1)' : 'rgba(255,255,255,0.6)',
 
     //primary colors
-    primary1: darkMode ? '#2172E5' : '#ff007a',
+    primary1: darkMode ? '#2172E5' : '#43d3db',
     primary2: darkMode ? '#3680E7' : '#FF8CC3',
     primary3: darkMode ? '#4D8FEA' : '#FF99C9',
-    primary4: darkMode ? '#376bad70' : '#F6DDE8',
-    primary5: darkMode ? '#153d6f70' : '#FDEAF1',
+    primary4: darkMode ? '#376bad70' : '#bfe0e2',
+    primary5: darkMode ? '#153d6f70' : '#daedef',
 
     // color text
     primaryText1: darkMode ? '#6da8ff' : '#ff007a',
-
+    buttonText: darkMode ? '#ffffff' : '#ffffff',
+    buttonBg: darkMode ? '#2172E5' : 'linear-gradient(180deg, #54DADE 0%, #24C7D6 76.22%)',
     // secondary colors
-    secondary1: darkMode ? '#2172E5' : '#ff007a',
-    secondary2: darkMode ? '#17000b26' : '#F6DDE8',
-    secondary3: darkMode ? '#17000b26' : '#FDEAF1',
+    secondary1: darkMode ? '#2172E5' : '#13aab5',
+    secondary2: darkMode ? '#17000b26' : '#bfe0e2',
+    secondary3: darkMode ? '#17000b26' : '#daedef',
 
     // other
     red1: '#FF6871',
@@ -177,12 +185,13 @@ export const TYPE = {
 
 export const FixedGlobalStyle = createGlobalStyle`
 html, input, textarea, button {
-  font-family: 'Inter', sans-serif;
+  font-family: Kanit, 'Inter',sans-serif;
+  letter-spacing: -0.018em;
   font-display: fallback;
 }
 @supports (font-variation-settings: normal) {
   html, input, textarea, button {
-    font-family: 'Inter var', sans-serif;
+    font-family: Kanit, 'Inter',sans-serif;
   }
 }
 
@@ -201,6 +210,7 @@ button {
 }
 
 html {
+  font-family: Kanit,'Inter', sans-serif;
   font-size: 16px;
   font-variant: none;
   -webkit-font-smoothing: antialiased;

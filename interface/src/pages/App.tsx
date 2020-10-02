@@ -28,7 +28,8 @@ import RemoveLiquidity from './RemoveLiquidity'
 import { RedirectOldRemoveLiquidityPathStructure } from './RemoveLiquidity/redirects'
 import Swap from './Swap'
 import { OpenClaimAddressModalAndRedirectToSwap, RedirectPathToSwapOnly, RedirectToSwap } from './Swap/redirects'
-
+import backimg from '../assets/images/bg.png'
+import LogoH from '../assets/images/logoh.png'
 import Vote from './Vote'
 import VotePage from './Vote/VotePage'
 
@@ -37,6 +38,16 @@ const AppWrapper = styled.div`
   flex-flow: column;
   align-items: flex-start;
   overflow-x: hidden;
+`
+const LogoTitle = styled.img`
+  width: 350px;
+  margin-top: 20px;
+`
+
+const BackImage = styled.img`
+  position: fixed;
+  top: 5%;
+  width: 100%;
 `
 
 const HeaderWrapper = styled.div`
@@ -85,6 +96,7 @@ export default function App() {
           <Header />
         </HeaderWrapper>
         <BodyWrapper>
+	  <BackImage src={backimg} alt="bg" />
           <Popups />
           <Polling />
           <TopLevelModals />
@@ -115,6 +127,7 @@ export default function App() {
               <Route component={RedirectPathToSwapOnly} />
             </Switch>
           </Web3ReactManager>
+          <LogoTitle src={LogoH} alt="bg" />
           <Marginer />
         </BodyWrapper>
       </AppWrapper>
